@@ -1,0 +1,91 @@
+<div class="container">
+  <h1>Weather</h1>
+
+
+<!-- Search form -->
+<form action="/">
+<input type="search" id="address" name='address' class="form-control" placeholder="Where are we going?" />
+<button type="submit" class="btn btn-light">Send</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: 'plZ2Z5063IE7',
+    apiKey: '631768871a48a87b3c0adbb9c7797f04',
+    container: document.querySelector('#address')
+  });
+
+  var $address = document.querySelector('#address-value')
+  placesAutocomplete.on('change', function(e) {
+    $address.textContent = e.suggestion.value
+    console.log(e.suggestion)
+  });
+
+  placesAutocomplete.on('clear', function() {
+    $address.textContent = 'none';
+  });
+
+})();
+</script>
+
+
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-12 col-sm-12">
+      <h2><%= @telaviv[:city] %></h2>
+      <p><%= Time.now.utc %></p>
+    </div>
+    <br>
+    <div class="temp-icon col-12 col-sm-3">
+      <h2><%= @telaviv[:temperature] %></h2>
+      <%= image_tag(@telaviv[:icon]) %>
+    </div>
+    <div class="element col-12 col-sm-5">
+      <p><%= @telaviv[:humidity] %></p>
+      <p><%= @telaviv[:wind] %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-12">
+      <h2><%= @paris[:city] %></h2>
+      <p><%= Time.now.utc %></p>
+    </div>
+    <br>
+    <div class="temp-icon col-12 col-sm-3">
+      <h2><%= @paris[:temperature] %></h2>
+      <%= image_tag(@paris[:icon]) %>
+    </div>
+    <div class="element col-12 col-sm-5">
+      <p><%= @paris[:humidity] %></p>
+      <p><%= @paris[:wind] %></p>
+    </div>
+  </div>
+
+
+
+
+
+<div class="row">
+  <% if @city_weather %>
+    <div class="col-12 col-sm-12">
+      <h2><%= @city_weather[:city] %></h2>
+      <p><%= Time.now.utc %></p>
+    </div>
+    <br>
+    <div class="temp-icon col-12 col-sm-3">
+      <h2><%= @city_weather[:temperature] %></h2>
+      <%= image_tag(@city_weather[:icon]) %>
+    </div>
+    <div class="element col-12 col-sm-5">
+      <p><%= @city_weather[:humidity] %></p>
+      <p><%= @city_weather[:wind] %></p>
+    </div>
+    <% else %>
+    <h1>Please Find a place</h1>
+    <% end %>
+  </div>

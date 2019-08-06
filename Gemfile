@@ -31,6 +31,10 @@ gem "autoprefixer-rails"
 gem 'bootstrap', '~> 4.3.1'
 gem "font-awesome-rails"
 gem 'simple_form'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem "algoliasearch-rails"
+gem 'Indirizzo', '~> 0.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
