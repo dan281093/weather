@@ -1,33 +1,47 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background: url(weather-design.png);
-  background-size: cover;
+html {
+  height: 100%;
 }
 
-h2, p{
+.cover {
+  background: url(bkg-sky.jpg) no-repeat 50% 50% fixed;
+  background-size: auto;
+}
+
+
+h2, p {
   color: #f4f4f4 !important;
   font-family: 'Open Sans', sans-serif !important;
 }
 
-h1 {
+.title {
   text-align: center;
-  font-family: 'Montserrat', sans-serif!important;
-  color: #f4f4f4 !important;
-
+  font-family: 'Montserrat', sans-serif;
+  color: #f4f4f4;
+  margin-bottom: 3rem;
 }
 
-.temp-icon {
+
+.row {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+form {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
 }
 
-.element {
+.btn {
+  margin-left: 10px;
+}
+
+.card{
+  background-color: #2b5cec73!important;
+  width: 25vw;
   text-align: center;
-}
-
-.algolia-places {
-    width: 30%;
+  width: 100%;
+  margin-bottom: 15px;
 }

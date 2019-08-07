@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def home
     @telaviv = CityWeatherUpdateService.import("tel-aviv", "israel")
     @paris = CityWeatherUpdateService.import("paris", "france")
+    @lisbon = CityWeatherUpdateService.import("lisbon", "portugal")
 
     if params[:address]
 
